@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Js</title>
+    <style>
+        .boxes {
+            width: 800px;
+            margin: 20px auto;
+            position: relative;
+        }
+        .box {
+            height: 200px;
+            font-size: 40px;
+            line-height: 200px;
+            text-align: center;
+
+        }
+        #box1 {
+            background: blueviolet;
+        }
+        #box2 {
+            background: chartreuse;
+            display: none;
+        }
+        #box3 {
+            background: crimson;
+            display: none;
+
+        }
+        #next {
+            position: absolute;
+            top: 45%;
+            right: 20px;
+            
+        }
+        #prev {
+            position: absolute;
+            top: 45%;
+            left: 20px;
+           
+        }
+
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <button id="next">Next</button>
+        <button id="prev">Prev</button>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>        
+    </div>
+
+    <script>
+        setInterval(next, 3000);
+        var box =1;
+        function next(params) {
+            document.querySelector(`#box${box}`).style.display = "none";
+            box++ ; if(box > 3) box=1;
+            document.querySelector(`#box${box}`).style.display = "block";
+            
+        }
+
+        function prev(params) {
+            document.querySelector(`#box${box}`).style.display = "none";
+            box-- ; if(box < 1) box=3;
+            document.querySelector(`#box${box}`).style.display = "block";
+            
+        }
+        document.querySelector("#next").onclick = next;
+        document.querySelector("#prev").onclick = prev;
+
+    </script>
+</body>
+</html>

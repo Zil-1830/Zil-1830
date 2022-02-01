@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Js 2</title>
+    <style>
+    .tabs {
+        list-style: none;
+        background: royalblue;
+        margin: 0;
+        overflow: hidden;
+        padding: 10px 10px 0 10px;
+
+
+    }
+     .tabs li {
+        float: left;
+        background: white;
+        margin-right: 6px;
+        padding: 10px 30px;
+        cursor: pointer;
+
+
+    }
+    .content {
+        height: 200px;
+        text-align: center;
+        border: 1px solid blue;
+        border-top: 0px none;
+        padding: 20px;
+    }
+    #tab1 {
+        opacity: 0.5;
+    }
+    #box2 {
+        display: none;
+
+    }
+    </style>
+</head>
+<body>
+    <ul class="tabs">
+        <li id="tab1" onclick="one()">One</li>
+        <li id="tab2" onclick="two()">Two</li>
+    </ul>
+    <div class="content" id="box1">Content One </div>
+    <div class="content" id="box2">Content Two </div>
+
+    <script>
+        function one(params) {
+            document.querySelector("#box1").style.display ="block";
+            document.querySelector("#box2").style.display ="none";
+            document.querySelector("#tab1").style.opacity = 1 ;
+            document.querySelector("#tab2").style.opacity = 0.5;
+            
+        }
+        function two(params) {
+            document.querySelector("#box1").style.display ="none";
+            document.querySelector("#box2").style.display ="block";
+            document.querySelector("#tab1").style.opacity = 0.5 ;
+            document.querySelector("#tab2").style.opacity = 1 ;
+            
+        }
+
+    </script>
+</body>
+</html>
